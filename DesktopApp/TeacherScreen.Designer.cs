@@ -31,8 +31,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -40,6 +40,7 @@
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgwTeachers = new System.Windows.Forms.DataGridView();
+            this.txtId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTeachers)).BeginInit();
             this.SuspendLayout();
@@ -71,23 +72,27 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(372, 87);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(372, 47);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(94, 29);
+            this.btnDelete.TabIndex = 26;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Location = new System.Drawing.Point(272, 87);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(272, 47);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
+            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtPassword
             // 
@@ -140,25 +145,38 @@
             // 
             // dgwTeachers
             // 
+            this.dgwTeachers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwTeachers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTeachers.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgwTeachers.Location = new System.Drawing.Point(0, 256);
             this.dgwTeachers.Name = "dgwTeachers";
-            this.dgwTeachers.RowHeadersWidth = 51;
+            this.dgwTeachers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgwTeachers.RowTemplate.Height = 29;
             this.dgwTeachers.Size = new System.Drawing.Size(800, 194);
             this.dgwTeachers.TabIndex = 16;
+            this.dgwTeachers.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgwTeachers_RowHeaderMouseDoubleClick);
+            // 
+            // txtId
+            // 
+            this.txtId.AutoSize = true;
+            this.txtId.Location = new System.Drawing.Point(163, 14);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(17, 20);
+            this.txtId.TabIndex = 30;
+            this.txtId.Text = "0";
+            this.txtId.Visible = false;
             // 
             // TeacherScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtEmail);
@@ -169,6 +187,7 @@
             this.Name = "TeacherScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TeacherScreen";
+            this.Load += new System.EventHandler(this.TeacherScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTeachers)).EndInit();
             this.ResumeLayout(false);
@@ -180,8 +199,8 @@
         private Button button4;
         private PictureBox pictureBox1;
         private Button btnAdd;
-        private Button button2;
-        private Button button1;
+        private Button btnDelete;
+        private Button btnUpdate;
         private TextBox txtPassword;
         private Label label3;
         private TextBox txtEmail;
@@ -189,5 +208,6 @@
         private TextBox txtFullname;
         private Label label1;
         private DataGridView dgwTeachers;
+        private Label txtId;
     }
 }

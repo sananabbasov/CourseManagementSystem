@@ -8,5 +8,6 @@ namespace Entities
 {
     public class ShiftTime : Base
     {
+        public string Name { get; set; }
     }
 }

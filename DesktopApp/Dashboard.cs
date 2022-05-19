@@ -34,5 +34,11 @@ namespace DesktopApp
             RoleScreen role = new();
             role.ShowDialog();
         }
+
+        private void btnAddGroup_Click(object sender, EventArgs e)
+        {
+            GroupScreen group = new();
+            group.ShowDialog();
+        }
     }
 }

@@ -135,6 +135,7 @@
             this.btnAddGroup.TabIndex = 1;
             this.btnAddGroup.Text = "Add Group";
             this.btnAddGroup.UseVisualStyleBackColor = true;
+            this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
             // 
             // btnAddStudent
             // 
