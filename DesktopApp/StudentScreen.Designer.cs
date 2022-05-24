@@ -28,37 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvStudents = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtFullname = new System.Windows.Forms.TextBox();
+            this.CmbGroups = new System.Windows.Forms.ComboBox();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TxtNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BtnUpdate = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.BtnAdd = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.NmrGeneralPrice = new System.Windows.Forms.NumericUpDown();
+            this.NmrPayment = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NmrGeneralPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NmrPayment)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DgvStudents
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 256);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 194);
-            this.dataGridView1.TabIndex = 0;
+            this.DgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvStudents.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DgvStudents.Location = new System.Drawing.Point(0, 256);
+            this.DgvStudents.Name = "DgvStudents";
+            this.DgvStudents.RowHeadersWidth = 51;
+            this.DgvStudents.RowTemplate.Height = 29;
+            this.DgvStudents.Size = new System.Drawing.Size(800, 194);
+            this.DgvStudents.TabIndex = 0;
             // 
             // label1
             // 
@@ -69,27 +70,28 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Full Name";
             // 
-            // textBox1
+            // TxtFullname
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 27);
-            this.textBox1.TabIndex = 2;
+            this.TxtFullname.Location = new System.Drawing.Point(12, 60);
+            this.TxtFullname.Name = "TxtFullname";
+            this.TxtFullname.Size = new System.Drawing.Size(221, 27);
+            this.TxtFullname.TabIndex = 2;
             // 
-            // comboBox1
+            // CmbGroups
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(260, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 28);
-            this.comboBox1.TabIndex = 3;
+            this.CmbGroups.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbGroups.FormattingEnabled = true;
+            this.CmbGroups.Location = new System.Drawing.Point(260, 59);
+            this.CmbGroups.Name = "CmbGroups";
+            this.CmbGroups.Size = new System.Drawing.Size(192, 28);
+            this.CmbGroups.TabIndex = 3;
             // 
-            // textBox2
+            // TxtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 27);
-            this.textBox2.TabIndex = 5;
+            this.TxtEmail.Location = new System.Drawing.Point(12, 133);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(221, 27);
+            this.TxtEmail.TabIndex = 5;
             // 
             // label2
             // 
@@ -100,12 +102,12 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Email";
             // 
-            // textBox3
+            // TxtNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 202);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(221, 27);
-            this.textBox3.TabIndex = 7;
+            this.TxtNumber.Location = new System.Drawing.Point(12, 202);
+            this.TxtNumber.Name = "TxtNumber";
+            this.TxtNumber.Size = new System.Drawing.Size(221, 27);
+            this.TxtNumber.TabIndex = 7;
             // 
             // label3
             // 
@@ -125,93 +127,106 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Group";
             // 
-            // button1
+            // BtnUpdate
             // 
-            this.button1.Location = new System.Drawing.Point(360, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Location = new System.Drawing.Point(360, 202);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(94, 29);
+            this.BtnUpdate.TabIndex = 9;
+            this.BtnUpdate.Text = "Update";
+            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Visible = false;
             // 
-            // button2
+            // BtnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(460, 202);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BtnDelete.Location = new System.Drawing.Point(460, 202);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(94, 29);
+            this.BtnDelete.TabIndex = 10;
+            this.BtnDelete.Text = "Delete";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Visible = false;
             // 
-            // button3
+            // BtnAdd
             // 
-            this.button3.Location = new System.Drawing.Point(260, 202);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 29);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(598, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 125);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(598, 200);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 29);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Upload Image";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnAdd.Location = new System.Drawing.Point(260, 202);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(94, 29);
+            this.BtnAdd.TabIndex = 11;
+            this.BtnAdd.Text = "Add";
+            this.BtnAdd.UseVisualStyleBackColor = true;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(260, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 20);
+            this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Price";
+            this.label5.Text = "General price";
             // 
-            // numericUpDown1
+            // NmrGeneralPrice
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(260, 134);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(192, 27);
-            this.numericUpDown1.TabIndex = 15;
+            this.NmrGeneralPrice.Location = new System.Drawing.Point(260, 134);
+            this.NmrGeneralPrice.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.NmrGeneralPrice.Name = "NmrGeneralPrice";
+            this.NmrGeneralPrice.Size = new System.Drawing.Size(192, 27);
+            this.NmrGeneralPrice.TabIndex = 15;
             // 
-            // Student
+            // NmrPayment
+            // 
+            this.NmrPayment.Location = new System.Drawing.Point(473, 134);
+            this.NmrPayment.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.NmrPayment.Name = "NmrPayment";
+            this.NmrPayment.Size = new System.Drawing.Size(192, 27);
+            this.NmrPayment.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(473, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Payment";
+            // 
+            // StudentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.NmrPayment);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.NmrGeneralPrice);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnAdd);
+            this.Controls.Add(this.BtnDelete);
+            this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TxtNumber);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TxtEmail);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.CmbGroups);
+            this.Controls.Add(this.TxtFullname);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Student";
+            this.Controls.Add(this.DgvStudents);
+            this.Name = "StudentScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.StudentScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NmrGeneralPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NmrPayment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,21 +234,21 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView DgvStudents;
         private Label label1;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
+        private TextBox TxtFullname;
+        private ComboBox CmbGroups;
+        private TextBox TxtEmail;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox TxtNumber;
         private Label label3;
         private Label label4;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private PictureBox pictureBox1;
-        private Button button4;
+        private Button BtnUpdate;
+        private Button BtnDelete;
+        private Button BtnAdd;
         private Label label5;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown NmrGeneralPrice;
+        private NumericUpDown NmrPayment;
+        private Label label6;
     }
 }

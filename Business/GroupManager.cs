@@ -13,7 +13,15 @@ namespace Business
     {
         ApplicationDbContext context = new();
 
+        public Group GetGroupById(int id)
+        {
+            return context.Groups.Include(x=>x.User).Include(x=>x.ShiftTime).FirstOrDefault(x=>x.Id == id);
+        }
 
+        public Group GetGroupByName(string groupName)
+        {
+            return context.Groups.FirstOrDefault(x => x.Name == groupName);
+        }
         public void AddGroup(Group group)
         {
             context.Groups.Add(group);
@@ -25,5 +33,17 @@ namespace Business
             return context.Groups.Include(x => x.User).Include(x=>x.ShiftTime);
         }
 
+        public void UpdateGroup(Group group) 
+        {
+            context.Groups.Update(group);
+            context.SaveChanges();
+        }
+
+        public void DeleteGroup(int id)
+        {
+            var group = context.Groups.FirstOrDefault(x=>x.Id == id);
+            context.Groups.Remove(group);
+            context.SaveChanges();
+        }
     }
 }

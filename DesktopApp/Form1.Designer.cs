@@ -29,28 +29,32 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPasswod = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.BtnRegister = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(226, 217);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(311, 27);
-            this.textBox1.TabIndex = 0;
+            this.txtEmail.Location = new System.Drawing.Point(226, 217);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(311, 27);
+            this.txtEmail.TabIndex = 0;
+            this.txtEmail.Text = "sanan@compar.az";
             // 
-            // textBox2
+            // txtPasswod
             // 
-            this.textBox2.Location = new System.Drawing.Point(226, 285);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(311, 27);
-            this.textBox2.TabIndex = 1;
+            this.txtPasswod.Location = new System.Drawing.Point(226, 285);
+            this.txtPasswod.Name = "txtPasswod";
+            this.txtPasswod.PasswordChar = '*';
+            this.txtPasswod.Size = new System.Drawing.Size(311, 27);
+            this.txtPasswod.TabIndex = 1;
+            this.txtPasswod.Text = "123456";
             // 
             // btnLogin
             // 
@@ -90,17 +94,28 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Email";
             // 
+            // BtnRegister
+            // 
+            this.BtnRegister.Location = new System.Drawing.Point(369, 332);
+            this.BtnRegister.Name = "BtnRegister";
+            this.BtnRegister.Size = new System.Drawing.Size(122, 38);
+            this.BtnRegister.TabIndex = 6;
+            this.BtnRegister.Text = "Register";
+            this.BtnRegister.UseVisualStyleBackColor = true;
+            this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 430);
+            this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPasswod);
+            this.Controls.Add(this.txtEmail);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -112,11 +127,12 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtEmail;
+        private TextBox txtPasswod;
         private Button btnLogin;
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
+        private Button BtnRegister;
     }
 }

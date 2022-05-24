@@ -72,5 +72,45 @@ namespace DesktopApp
             cmbShifts.Text = "";
             DGVGroups();
         }
+
+        private void dgvGroups_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int groupId = (int)dgvGroups.Rows[e.RowIndex].Cells[0].Value;
+            var group = groupManager.GetGroupById(groupId);
+            lblGroupId.Text = Convert.ToString(group.Id);
+            txtGroupName.Text = group.Name;
+            cmbTeachers.Text = group.User.Fullname;
+            cmbShifts.Text = group.ShiftTime.Name;
+
+        }
+
+        private void btnUpdateGroup_Click(object sender, EventArgs e)
+        {
+            int groupId = Convert.ToInt32(lblGroupId.Text);
+            var group = groupManager.GetGroupById(groupId);
+            var teacher = teacherManager.GetTeacherByName(cmbTeachers.Text);
+            var shift = shiftManager.GetShiftByName(cmbShifts.Text);
+            group.Name = txtGroupName.Text;
+            group.UserId = teacher.Id;
+            group.ShiftTimeId = shift.Id;
+            groupManager.UpdateGroup(group);
+            txtGroupName.Text = "";
+            cmbTeachers.Text = "";
+            cmbShifts.Text = "";
+            DGVGroups();
+        }
+
+        private void btnDeleteGroup_Click(object sender, EventArgs e)
+        {
+            int groupId = Convert.ToInt32(lblGroupId.Text);
+
+            DialogResult result = MessageBox.Show("Are you sure?", "Delete group",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                groupManager.DeleteGroup(groupId);
+            }
+            DGVGroups();
+
+        }
     }
 }

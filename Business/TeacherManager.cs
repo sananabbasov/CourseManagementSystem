@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,11 @@ namespace Business
     public class TeacherManager
     {
         ApplicationDbContext context = new();
-
+        UserManager userManager = new();
         public List<User> GetAllTeacher()
         {
             var teachers = context.Users.Where(x => x.RoleId == 2 && x.IsDeleted == false).ToList();
+
 
             return teachers;
         }
@@ -32,6 +34,7 @@ namespace Business
 
         public void AddTeacher(User user)
         {
+            user.Password = userManager.PasswordHash(user.Password);
             user.RoleId = 2;
             context.Users.Add(user);
             context.SaveChanges();
@@ -47,6 +50,11 @@ namespace Business
         public User GetTeacherByName(string name)
         {
             return context.Users.FirstOrDefault(x=>x.Fullname == name && x.IsDeleted == false);
+        }
+
+        public User GetTeacherByEmail(string email)
+        {
+            return context.Users.FirstOrDefault(x => x.Email == email);
         }
     }
 }

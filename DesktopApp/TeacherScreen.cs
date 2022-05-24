@@ -39,26 +39,35 @@ namespace DesktopApp
             var email = txtEmail.Text;
             var password = txtPassword.Text;
 
-            if (string.IsNullOrWhiteSpace(fullname) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+            var findTeacher = teacherManager.GetTeacherByEmail(email);
+
+            if (findTeacher != null)
             {
-                MessageBox.Show("* inputs is required!");
+                MessageBox.Show("Email is exist.");
             }
             else
             {
-                User user = new()
+                if (string.IsNullOrWhiteSpace(fullname) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
                 {
-                    Fullname = fullname,
-                    Email = email,
-                    Password = password,
-                };
+                    MessageBox.Show("* inputs is required!");
+                }
+                else
+                {
+                    User user = new()
+                    {
+                        Fullname = fullname,
+                        Email = email,
+                        Password = password,
+                    };
 
-                teacherManager.AddTeacher(user);
-                MessageBox.Show("Teacher is added.");
-                txtFullname.Text = "";
-                txtEmail.Text = "";
-                txtPassword.Text = "";
+                    teacherManager.AddTeacher(user);
+                    MessageBox.Show("Teacher is added.");
+                    txtFullname.Text = "";
+                    txtEmail.Text = "";
+                    txtPassword.Text = "";
 
-                FillTeacherDGW();
+                    FillTeacherDGW();
+                }
             }
         }
 
@@ -103,7 +112,7 @@ namespace DesktopApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result= MessageBox.Show("Are your sure?","Delete teacher", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are your sure?", "Delete teacher", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 int userId = Convert.ToInt32(txtId.Text);
@@ -125,9 +134,9 @@ namespace DesktopApp
                 btnDelete.Visible = false;
                 btnUpdate.Visible = false;
                 btnAdd.Visible = true;
-                
+
             }
-            
+
         }
     }
 }

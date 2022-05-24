@@ -36,6 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbShifts = new System.Windows.Forms.ComboBox();
             this.cmbTeachers = new System.Windows.Forms.ComboBox();
+            this.lblGroupId = new System.Windows.Forms.Label();
+            this.btnUpdateGroup = new System.Windows.Forms.Button();
+            this.btnDeleteGroup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +53,7 @@
             this.dgvGroups.RowTemplate.Height = 29;
             this.dgvGroups.Size = new System.Drawing.Size(800, 189);
             this.dgvGroups.TabIndex = 14;
+            this.dgvGroups.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvGroups_RowHeaderMouseDoubleClick);
             // 
             // btnAddGroup
             // 
@@ -113,11 +117,44 @@
             this.cmbTeachers.Size = new System.Drawing.Size(151, 28);
             this.cmbTeachers.TabIndex = 15;
             // 
+            // lblGroupId
+            // 
+            this.lblGroupId.AutoSize = true;
+            this.lblGroupId.Location = new System.Drawing.Point(12, 21);
+            this.lblGroupId.Name = "lblGroupId";
+            this.lblGroupId.Size = new System.Drawing.Size(17, 20);
+            this.lblGroupId.TabIndex = 16;
+            this.lblGroupId.Text = "0";
+            this.lblGroupId.Visible = false;
+            // 
+            // btnUpdateGroup
+            // 
+            this.btnUpdateGroup.Location = new System.Drawing.Point(259, 129);
+            this.btnUpdateGroup.Name = "btnUpdateGroup";
+            this.btnUpdateGroup.Size = new System.Drawing.Size(126, 29);
+            this.btnUpdateGroup.TabIndex = 17;
+            this.btnUpdateGroup.Text = "Update Group";
+            this.btnUpdateGroup.UseVisualStyleBackColor = true;
+            this.btnUpdateGroup.Click += new System.EventHandler(this.btnUpdateGroup_Click);
+            // 
+            // btnDeleteGroup
+            // 
+            this.btnDeleteGroup.Location = new System.Drawing.Point(391, 129);
+            this.btnDeleteGroup.Name = "btnDeleteGroup";
+            this.btnDeleteGroup.Size = new System.Drawing.Size(126, 29);
+            this.btnDeleteGroup.TabIndex = 18;
+            this.btnDeleteGroup.Text = "Detele Group";
+            this.btnDeleteGroup.UseVisualStyleBackColor = true;
+            this.btnDeleteGroup.Click += new System.EventHandler(this.btnDeleteGroup_Click);
+            // 
             // GroupScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDeleteGroup);
+            this.Controls.Add(this.btnUpdateGroup);
+            this.Controls.Add(this.lblGroupId);
             this.Controls.Add(this.cmbTeachers);
             this.Controls.Add(this.dgvGroups);
             this.Controls.Add(this.btnAddGroup);
@@ -146,5 +183,8 @@
         private Label label1;
         private ComboBox cmbShifts;
         private ComboBox cmbTeachers;
+        private Label lblGroupId;
+        private Button btnUpdateGroup;
+        private Button btnDeleteGroup;
     }
 }
