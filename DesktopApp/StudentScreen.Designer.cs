@@ -44,6 +44,7 @@
             this.NmrGeneralPrice = new System.Windows.Forms.NumericUpDown();
             this.NmrPayment = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.BtnPay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NmrGeneralPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NmrPayment)).BeginInit();
@@ -60,6 +61,7 @@
             this.DgvStudents.RowTemplate.Height = 29;
             this.DgvStudents.Size = new System.Drawing.Size(800, 194);
             this.DgvStudents.TabIndex = 0;
+            this.DgvStudents.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvStudents_RowHeaderMouseDoubleClick);
             // 
             // label1
             // 
@@ -136,6 +138,7 @@
             this.BtnUpdate.Text = "Update";
             this.BtnUpdate.UseVisualStyleBackColor = true;
             this.BtnUpdate.Visible = false;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // BtnDelete
             // 
@@ -168,6 +171,7 @@
             // 
             // NmrGeneralPrice
             // 
+            this.NmrGeneralPrice.DecimalPlaces = 2;
             this.NmrGeneralPrice.Location = new System.Drawing.Point(260, 134);
             this.NmrGeneralPrice.Maximum = new decimal(new int[] {
             10000000,
@@ -180,6 +184,7 @@
             // 
             // NmrPayment
             // 
+            this.NmrPayment.DecimalPlaces = 2;
             this.NmrPayment.Location = new System.Drawing.Point(473, 134);
             this.NmrPayment.Maximum = new decimal(new int[] {
             1000000000,
@@ -199,11 +204,22 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Payment";
             // 
+            // BtnPay
+            // 
+            this.BtnPay.Location = new System.Drawing.Point(671, 134);
+            this.BtnPay.Name = "BtnPay";
+            this.BtnPay.Size = new System.Drawing.Size(94, 29);
+            this.BtnPay.TabIndex = 19;
+            this.BtnPay.Text = "Pay";
+            this.BtnPay.UseVisualStyleBackColor = true;
+            this.BtnPay.Visible = false;
+            // 
             // StudentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnPay);
             this.Controls.Add(this.NmrPayment);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.NmrGeneralPrice);
@@ -250,5 +266,6 @@
         private NumericUpDown NmrGeneralPrice;
         private NumericUpDown NmrPayment;
         private Label label6;
+        private Button BtnPay;
     }
 }

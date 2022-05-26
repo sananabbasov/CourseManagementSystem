@@ -1,5 +1,6 @@
 ﻿using DataAccess;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Business
     {
         ApplicationDbContext context = new();
 
+
+      
         public Student AddStudent(Student student)
         {
             context.Students.Add(student);
@@ -19,6 +22,19 @@ namespace Business
 
             return student;
         }
+
+        public void UpdateStudent(Student student)
+        {
+            context.Students.Update(student);
+            context.SaveChanges();
+        }
+
+        public Student GetStudentById(int id)
+        {
+            return context.Students.Include(x=>x.Group).FirstOrDefault(x=>x.Id == id);
+        }
+
+  
 
         public IQueryable<Student> GetAllStudents()
             => context.Students;

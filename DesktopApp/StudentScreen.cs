@@ -18,6 +18,9 @@ namespace DesktopApp
         PaymentManager _paymentManager = new();
         StudentManager _studentManager = new();
 
+
+
+        int studentNewId = 0;
         public StudentScreen()
         {
             InitializeComponent();
@@ -83,11 +86,69 @@ namespace DesktopApp
             {
                 MessageBox.Show("Something is wrong.", "Error", MessageBoxButtons.OK);
             }
+        }
+
+        private void DgvStudents_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int studentId = (int)DgvStudents.Rows[e.RowIndex].Cells[0].Value;
+
+            try
+            {
+                var student = _studentManager.GetStudentById(studentId);
+                TxtEmail.Text = student.Email;
+                TxtNumber.Text = student.Number;
+                TxtFullname.Text = student.Fullname;
+                CmbGroups.Text = student.Group.Name;
+                NmrGeneralPrice.Value = (decimal)student.MainPrice;
+
+                studentNewId = student.Id;
 
 
+                BtnAdd.Visible = false;
+                BtnUpdate.Visible = true;
+                BtnDelete.Visible = true;
+                BtnPay.Visible = true;
+                NmrGeneralPrice.Enabled = false;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Something is wrong! \n Error: " + error.Message, "Warning", MessageBoxButtons.OK);
+            }
 
 
 
         }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    var student = _studentManager.GetStudentById(studentNewId);
+                    var group = _groupManager.GetGroupByName(CmbGroups.Text);
+                    student.Fullname = TxtFullname.Text;
+                    student.Number = TxtNumber.Text;
+                    student.Email = TxtEmail.Text;
+                    student.GroupId = group.Id;
+                    _studentManager.UpdateStudent(student);
+                    MessageBox.Show("Student is updated.");
+                    FillDGV();
+                    TxtEmail.Text = string.Empty;
+                    TxtNumber.Text = string.Empty;
+                    TxtFullname.Text = string.Empty;
+                    CmbGroups.SelectedText = String.Empty;
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Something is wrong!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
     }
 }

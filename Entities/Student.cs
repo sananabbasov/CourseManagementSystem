@@ -13,6 +13,7 @@ namespace Entities
         public string Password { get; set; }
         public string Number { get; set; }
         public double MainPrice { get; set; }
+        public bool IsDeleted { get; set; }
         public int GroupId { get; set; }
         public Group Group { get; set; }
     }
